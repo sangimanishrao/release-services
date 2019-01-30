@@ -2,7 +2,7 @@
 # See more at: https://github.com/garbas/pypi2nix
 #
 # COMMAND:
-#   pypi2nix -v -C /app/src/shipit/api/../../../tmp/pypi2nix -V 3.7 -O ../../../nix/requirements_override.nix -E postgresql -e vcversioner -e pytest-runner -e setuptools-scm -r requirements.txt -r requirements-dev.txt
+#   pypi2nix -v -C /tmp/release-services-kba3ub77/src/shipit/api/../../../tmp/pypi2nix -V 3.7 -O ../../../nix/requirements_override.nix -E postgresql -e vcversioner -e pytest-runner -e setuptools-scm -r requirements.txt -r requirements-dev.txt
 #
 
 { pkgs ? import <nixpkgs> {},
@@ -351,10 +351,10 @@ let
     };
 
     "SQLAlchemy" = python.mkDerivation {
-      name = "SQLAlchemy-1.2.16";
+      name = "SQLAlchemy-1.2.17";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/05/d2/17fb194f4ae83577258ea1d81da3d5d5643f4957fa14fd0261d78d648bf5/SQLAlchemy-1.2.16.tar.gz";
-        sha256 = "6af3ca2f7f00844465ab4fa78337d487b39e53f516c51328aed4ed3a719d4264";
+        url = "https://files.pythonhosted.org/packages/c6/52/73d1c92944cd294a5b165097038418abb6a235f5956d43d06f97254f73bf/SQLAlchemy-1.2.17.tar.gz";
+        sha256 = "52a42dbf02d0562d6e90e7af59f177f1cc027e72833cc29c3a821eefa009c71d";
       };
       doCheck = commonDoCheck;
       checkPhase = "";
@@ -431,10 +431,10 @@ let
     };
 
     "alembic" = python.mkDerivation {
-      name = "alembic-1.0.6";
+      name = "alembic-1.0.7";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/50/7a/17bc17b3f5b01ebd3af38d71a15baa33beb241ab280b6ad0977ae24ec208/alembic-1.0.6.tar.gz";
-        sha256 = "35660f7e6159288e2be111126be148ef04cbf7306da73c8b8bd4400837bb08e3";
+        url = "https://files.pythonhosted.org/packages/a4/06/f1ae8393463c26f3dafa21eebac611088da02a26e1f1e23bd75fee2dbffe/alembic-1.0.7.tar.gz";
+        sha256 = "16505782b229007ae905ef9e0ae6e880fddafa406f086ac7d442c1aaf712f8c2";
       };
       doCheck = commonDoCheck;
       checkPhase = "";
@@ -602,10 +602,10 @@ let
     };
 
     "boto3" = python.mkDerivation {
-      name = "boto3-1.9.82";
+      name = "boto3-1.9.86";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/fc/56/80b87bff774a5ed3bb01c2cf962c300a624d07157f3d877c9c6b34a8e93c/boto3-1.9.82.tar.gz";
-        sha256 = "65fb08c87bc7fe144f9b74dd4e02ada8b7c2286cd8eb687fa0a249f628fefce2";
+        url = "https://files.pythonhosted.org/packages/d2/ae/a3a6a0176e5e29716d5f5f89572525689f0d3eb031fc3091000af9b4200c/boto3-1.9.86.tar.gz";
+        sha256 = "63cd957ba663f5c10ff48ed904575eaa701314f79f18dbc59bd050311cd5f809";
       };
       doCheck = commonDoCheck;
       checkPhase = "";
@@ -624,10 +624,10 @@ let
     };
 
     "botocore" = python.mkDerivation {
-      name = "botocore-1.12.82";
+      name = "botocore-1.12.86";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/41/df/4fc4ea7eb97dc67935491b1c00dab23b3ffeb9caecabcd1fde8e00d504df/botocore-1.12.82.tar.gz";
-        sha256 = "d8487bc063482a4f9f394e05bfb790a95566ed31653a89677a889e1237d571f5";
+        url = "https://files.pythonhosted.org/packages/8e/b3/b9f7ffa347057fa44c65197864eec6a8a53f5a24f613b1b7b3f2b755cc65/botocore-1.12.86.tar.gz";
+        sha256 = "24444e7580f0114c3e9fff5d2032c6f0cfbf88691b1be3ba27c6922507a902ec";
       };
       doCheck = commonDoCheck;
       checkPhase = "";
@@ -1621,10 +1621,10 @@ let
     };
 
     "psycopg2" = python.mkDerivation {
-      name = "psycopg2-2.7.6.1";
+      name = "psycopg2-2.7.7";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/c0/07/93573b97ed61b6fb907c8439bf58f09957564cf7c39612cef36c547e68c6/psycopg2-2.7.6.1.tar.gz";
-        sha256 = "27959abe64ca1fc6d8cd11a71a1f421d8287831a3262bd4cacd43bbf43cc3c82";
+        url = "https://files.pythonhosted.org/packages/63/54/c039eb0f46f9a9406b59a638415c2012ad7be9b4b97bfddb1f48c280df3a/psycopg2-2.7.7.tar.gz";
+        sha256 = "f4526d078aedd5187d0508aa5f9a01eae6a48a470ed678406da94b4cd6524b7e";
       };
       doCheck = commonDoCheck;
       checkPhase = "";
@@ -1677,10 +1677,10 @@ let
     };
 
     "pyasn1-modules" = python.mkDerivation {
-      name = "pyasn1-modules-0.2.3";
+      name = "pyasn1-modules-0.2.4";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/c8/0e/3fe59edc782faf8b429f4a1db734418d0f68a7e50f43095747c08330e952/pyasn1-modules-0.2.3.tar.gz";
-        sha256 = "d14fcb29dabecba3d7b360bf72327c26c385248a5d603cf6be5f566ce999b261";
+        url = "https://files.pythonhosted.org/packages/bd/a5/ef7bf693e8a8f015386c9167483199f54f8a8ec01d1c737e05524f16e792/pyasn1-modules-0.2.4.tar.gz";
+        sha256 = "a52090e8c5841ebbf08ae455146792d9ef3e8445b21055d3a3b7ed9c712b7c7c";
       };
       doCheck = commonDoCheck;
       checkPhase = "";
@@ -2101,16 +2101,17 @@ let
     };
 
     "swagger-ui-bundle" = python.mkDerivation {
-      name = "swagger-ui-bundle-0.0.2";
+      name = "swagger-ui-bundle-0.0.3";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/6f/94/f1ef24ede1ee2ef288c3c492baa5763fe5ff4a946c713e9a4e6e9e4a4eb0/swagger_ui_bundle-0.0.2.tar.gz";
-        sha256 = "98a418585f62e5e1193cb0f8000292bcb01e6a33bc39e5ba95b642172ef2664e";
+        url = "https://files.pythonhosted.org/packages/66/a4/ac052cd5e0284363bab158dc6b9a4ebb26044c3ae0643a1d20b6797f9412/swagger_ui_bundle-0.0.3.tar.gz";
+        sha256 = "0009f3cb6e60b36a57a595eabbff79ecb364c44e0cdf718667d90a93265f2cf2";
       };
       doCheck = commonDoCheck;
       checkPhase = "";
       installCheckPhase = "";
       buildInputs = commonBuildInputs ++ [
         self."flake8"
+        self."pytest-runner"
       ];
       propagatedBuildInputs = [
         self."Jinja2"
@@ -2167,10 +2168,10 @@ let
     };
 
     "testfixtures" = python.mkDerivation {
-      name = "testfixtures-6.4.3";
+      name = "testfixtures-6.5.0";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/c2/9f/677eab4c24ba0920469e2e276e5d67a4b9819e1f589a7b390525fd765bd6/testfixtures-6.4.3.tar.gz";
-        sha256 = "b6c05222ce8d3c34a1353ff30c73da55f61ef58153229a5664ef7110ec340cdd";
+        url = "https://files.pythonhosted.org/packages/d3/06/52f46d4e05c5d923e384976d057ca14a0d90c561cd150bebe7e04a9ffe15/testfixtures-6.5.0.tar.gz";
+        sha256 = "cbd0f095d178de578709bcf4cc6eea896964635d2b41386d1cc7583674809b0e";
       };
       doCheck = commonDoCheck;
       checkPhase = "";
