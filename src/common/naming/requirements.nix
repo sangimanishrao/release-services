@@ -2,7 +2,7 @@
 # See more at: https://github.com/garbas/pypi2nix
 #
 # COMMAND:
-#   pypi2nix -v -C /app/src/common/naming/../../../tmp/pypi2nix -V 3.7 -O ../../../nix/requirements_override.nix -e pytest-runner -e setuptools-scm -r requirements-dev.txt
+#   pypi2nix -v -C /tmp/release-services-bh4lwd_5/src/common/naming/../../../tmp/pypi2nix -V 3.7 -O ../../../nix/requirements_override.nix -e pytest-runner -e setuptools-scm -r requirements-dev.txt
 #
 
 { pkgs ? import <nixpkgs> {},
@@ -768,10 +768,10 @@ let
     };
 
     "testfixtures" = python.mkDerivation {
-      name = "testfixtures-6.4.3";
+      name = "testfixtures-6.5.0";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/c2/9f/677eab4c24ba0920469e2e276e5d67a4b9819e1f589a7b390525fd765bd6/testfixtures-6.4.3.tar.gz";
-        sha256 = "b6c05222ce8d3c34a1353ff30c73da55f61ef58153229a5664ef7110ec340cdd";
+        url = "https://files.pythonhosted.org/packages/d3/06/52f46d4e05c5d923e384976d057ca14a0d90c561cd150bebe7e04a9ffe15/testfixtures-6.5.0.tar.gz";
+        sha256 = "cbd0f095d178de578709bcf4cc6eea896964635d2b41386d1cc7583674809b0e";
       };
       doCheck = commonDoCheck;
       checkPhase = "";
