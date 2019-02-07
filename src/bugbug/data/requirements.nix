@@ -490,8 +490,8 @@ let
     "bugbug" = python.mkDerivation {
       name = "bugbug-0.0.1";
       src = pkgs.fetchurl {
-        url = "https://github.com/marco-c/bugbug/archive/e573628727793ae6da72b4a3853b594e14f951b4.tar.gz";
-        sha256 = "0efa4def65f75a845a506500c576ea58008f3000b6dccf7ad137829e0d4a2dfd";
+        url = "https://github.com/marco-c/bugbug/archive/3efb956cffa36a62644f830042f0fcbf812db97a.tar.gz";
+        sha256 = "1sn354bqi457824vwg77178h1zw6hdxzb4lix4h9mmnxkvj15ifx";
       };
       doCheck = commonDoCheck;
       checkPhase = "";
