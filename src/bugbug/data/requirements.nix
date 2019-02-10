@@ -2,7 +2,7 @@
 # See more at: https://github.com/garbas/pypi2nix
 #
 # COMMAND:
-#   pypi2nix -v -C /app/src/bugbug/data/../../../tmp/pypi2nix -V 3.7 -O ../../../nix/requirements_override.nix -E blas -E gfortran -E libffi -E openssl -E pkgconfig -E freetype.dev -E libjpeg.dev -E hdf5 -s numpy -s flit -s intreehooks -s cython -s pkgconfig -e pytest-runner -e setuptools-scm -r requirements.txt -r requirements-dev.txt
+#   pypi2nix -v -C /tmp/release-services-u9tppcjy/src/bugbug/data/../../../tmp/pypi2nix -V 3.7 -O ../../../nix/requirements_override.nix -E blas -E gfortran -E libffi -E openssl -E pkgconfig -E freetype.dev -E libjpeg.dev -E hdf5 -s numpy -s flit -s intreehooks -s cython -s pkgconfig -e pytest-runner -e setuptools-scm -r requirements.txt -r requirements-dev.txt
 #
 
 { pkgs ? import <nixpkgs> {},
@@ -107,10 +107,10 @@ let
     };
 
     "Cython" = python.mkDerivation {
-      name = "Cython-0.29.4";
+      name = "Cython-0.29.5";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/cf/e2/03af631ca4a2cf7bc392dd8785c7cc427bff3af4bf5864cdde734f80d052/Cython-0.29.4.tar.gz";
-        sha256 = "d1ee3d39c73a094ae5b6e2f9263ae0dc61af1b549a0869ade8c3c30325ed9f26";
+        url = "https://files.pythonhosted.org/packages/e0/31/4a166556f92c469d8291d4b03a187f325c773c330fffc1e798bf83d947f2/Cython-0.29.5.tar.gz";
+        sha256 = "9d5290d749099a8e446422adfb0aa2142c711284800fb1eb70f595101e32cbf1";
       };
       doCheck = commonDoCheck;
       checkPhase = "";
@@ -172,10 +172,10 @@ let
     };
 
     "Keras-Preprocessing" = python.mkDerivation {
-      name = "Keras-Preprocessing-1.0.8";
+      name = "Keras-Preprocessing-1.0.9";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/98/35/8d86f3c39374ed6c9ebbeffc2c824b1fad29b62ac5a862b2d5c2e9770ef1/Keras_Preprocessing-1.0.8.tar.gz";
-        sha256 = "6e669aa713727f0bc08f756616f64e0dfa75d822226cfc0dcf33297ab05cef7d";
+        url = "https://files.pythonhosted.org/packages/59/ed/0119d5a5d02731f8532544dc341bb07a2ab9a0e9873ad6051a180f7076e2/Keras_Preprocessing-1.0.9.tar.gz";
+        sha256 = "5e3700117981c2db762e512ed6586638124fac5842170701628088a11aeb51ac";
       };
       doCheck = commonDoCheck;
       checkPhase = "";
@@ -183,6 +183,7 @@ let
       buildInputs = commonBuildInputs ++ [ ];
       propagatedBuildInputs = [
         self."Pillow"
+        self."flake8"
         self."numpy"
         self."scipy"
         self."six"
@@ -443,10 +444,10 @@ let
     };
 
     "boto3" = python.mkDerivation {
-      name = "boto3-1.9.86";
+      name = "boto3-1.9.91";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/d2/ae/a3a6a0176e5e29716d5f5f89572525689f0d3eb031fc3091000af9b4200c/boto3-1.9.86.tar.gz";
-        sha256 = "63cd957ba663f5c10ff48ed904575eaa701314f79f18dbc59bd050311cd5f809";
+        url = "https://files.pythonhosted.org/packages/d0/04/031df9ef44f7249019d6588a7ec34143a1d8a0066953b8748192f8b01439/boto3-1.9.91.tar.gz";
+        sha256 = "428c6d535f373a7203ed7ec687bb826b88e62de7befc3816e0aacd305f7572a2";
       };
       doCheck = commonDoCheck;
       checkPhase = "";
@@ -465,10 +466,10 @@ let
     };
 
     "botocore" = python.mkDerivation {
-      name = "botocore-1.12.86";
+      name = "botocore-1.12.91";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/8e/b3/b9f7ffa347057fa44c65197864eec6a8a53f5a24f613b1b7b3f2b755cc65/botocore-1.12.86.tar.gz";
-        sha256 = "24444e7580f0114c3e9fff5d2032c6f0cfbf88691b1be3ba27c6922507a902ec";
+        url = "https://files.pythonhosted.org/packages/92/98/562846861aa52c90a4d206496af40c026067ee221d2ad5353f8b8ea21125/botocore-1.12.91.tar.gz";
+        sha256 = "bd788c6ebae55db17d9cc125fa3817fddb20d3fc8bd15791995d82c466238a3b";
       };
       doCheck = commonDoCheck;
       checkPhase = "";
@@ -1078,10 +1079,10 @@ let
     };
 
     "flit" = python.mkDerivation {
-      name = "flit-1.2.1";
+      name = "flit-1.3";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/6a/55/a25505e3b3f5d804d1a0b6a64c582f4a264697c94862ccf71b8a1c62d16d/flit-1.2.1.tar.gz";
-        sha256 = "6aefa6ff89a993af7a7af40d3df3d0387d6663df99797981ec41b1431ec6d1e1";
+        url = "https://files.pythonhosted.org/packages/1f/87/9ea76ab4cdf1fd36710d9688ec36a0053067c47e753b32272f952ff206c5/flit-1.3.tar.gz";
+        sha256 = "6f6f0fb83c51ffa3a150fa41b5ac118df9ea4a87c2c06dff4ebf9adbe7b52b36";
       };
       doCheck = commonDoCheck;
       checkPhase = "";
@@ -1682,10 +1683,10 @@ let
     };
 
     "mypy" = python.mkDerivation {
-      name = "mypy-0.660";
+      name = "mypy-0.670";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/a4/f6/032e015285905243cff94625367c7a20ba0acbae8e802b740c8a876b2f39/mypy-0.660.tar.gz";
-        sha256 = "986a7f97808a865405c5fd98fae5ebfa963c31520a56c783df159e9a81e41b3e";
+        url = "https://files.pythonhosted.org/packages/b3/69/68cca7d49c4a6856c2937ea794b9eb21102137503f924c6eca7c72664901/mypy-0.670.tar.gz";
+        sha256 = "e80fd6af34614a0e898a57f14296d0dacb584648f0339c2e000ddbf0f4cc2f8d";
       };
       doCheck = commonDoCheck;
       checkPhase = "";
@@ -1832,10 +1833,10 @@ let
     };
 
     "parso" = python.mkDerivation {
-      name = "parso-0.3.2";
+      name = "parso-0.3.3";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/22/50/fa4ffb9b7e0b52f0bea19e5fcc9759eda369efa43a4e4a534a5cf9a00e71/parso-0.3.2.tar.gz";
-        sha256 = "4b8f9ed80c3a4a3191aa3261505d868aa552dd25649cb13a7d73b6b7315edf2d";
+        url = "https://files.pythonhosted.org/packages/92/63/02c20817d58db8703b250128ea2c63488fb6599a2d9c0bc37d3daac6497f/parso-0.3.3.tar.gz";
+        sha256 = "8162be7570ffb34ec0b8d215d7f3b6c5fab24f51eb3886d6dee362de96b6db94";
       };
       doCheck = commonDoCheck;
       checkPhase = "";
@@ -2444,10 +2445,10 @@ let
     };
 
     "s3transfer" = python.mkDerivation {
-      name = "s3transfer-0.1.13";
+      name = "s3transfer-0.2.0";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/9a/66/c6a5ae4dbbaf253bd662921b805e4972451a6d214d0dc9fb3300cb642320/s3transfer-0.1.13.tar.gz";
-        sha256 = "90dc18e028989c609146e241ea153250be451e05ecc0c2832565231dacdf59c1";
+        url = "https://files.pythonhosted.org/packages/43/22/37b9aaf3969628a25b3b921612139ebc5b8dc26cabb9873c356e1ad2ce2e/s3transfer-0.2.0.tar.gz";
+        sha256 = "f23d5cb7d862b104401d9021fc82e5fa0e0cf57b7660a1331425aab0c691d021";
       };
       doCheck = commonDoCheck;
       checkPhase = "";
@@ -2840,10 +2841,10 @@ let
     };
 
     "typed-ast" = python.mkDerivation {
-      name = "typed-ast-1.2.0";
+      name = "typed-ast-1.3.1";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/00/be/c3769a5d6a179c42eba04186dc7efeb165edf92f7b1582ccfe81cb17d7f9/typed-ast-1.2.0.tar.gz";
-        sha256 = "b4726339a4c180a8b6ad9d8b50d2b6dc247e1b79b38fe2290549c98e82e4fd15";
+        url = "https://files.pythonhosted.org/packages/fc/c6/61d6410fc70fda073bd1810f9b7f7022f00146b108f278a0c00041bfe5b0/typed-ast-1.3.1.tar.gz";
+        sha256 = "606d8afa07eef77280c2bf84335e24390055b478392e1975f96286d99d0cb424";
       };
       doCheck = commonDoCheck;
       checkPhase = "";
